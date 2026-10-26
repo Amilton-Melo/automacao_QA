@@ -53,9 +53,12 @@ Abaixo está o detalhamento de cada comando utilizado nos scripts de teste (`cyp
    * **Objetivo:** Garantir que um usuário com credenciais válidas consegue acessar a área restrita (`/inventory.html`).
 2. **`CT002 - Validar mensagem de erro ao realizar login com senha incorreta (Fluxo de Exceção)`**
    * **Objetivo:** Garantir que o sistema bloqueia o acesso e exibe a mensagem *"Epic sadface: Username and password do not match any user in this service"*.
-3. **`CT003 - Validar mensagem de erro ao realizar login com usuário incorreto (Fluxo de Exceção)`**
-   * **Objetivo:** Garantir a segurança do sistema ao barrar usuários inexistentes ou formatados incorretamente.
-
+3. **`CT003 - Validar mensagem de erro ao realizar login com usuario incorreto (Fluxo de Exceção)`**
+   * **Objetivo:** Garantir a segurança do sistema ao barrar usuários inexistentes ou formatados incorretamente e exibindo a mensagem *"Epic sadface: Username and password do not match any user in this service"*.
+4. **`CT004 - Validar mensagem de erro ao realizar login com usuario e senha incorreto (Fluxo de Exceção)`**
+   * **Objetivo:** Garantir que o sistema bloqueia o acesso e exibe a mensagem *"Epic sadface: Username and password do not match any user in this service"*.
+4. **`CT005 - Validar mensagem de erro ao deixar usuario e senha vazio (Fluxo de Exceção)`**
+   * **Objetivo:** Garantir a segurança do sistema ao barrar tentativa de login sem informação preenchida e exibindo a mensagem *"Epic sadface: Username is required"*.
 ---
 
 ## 🚀 Como Executar os Testes Localmente
@@ -63,6 +66,11 @@ Abaixo está o detalhamento de cada comando utilizado nos scripts de teste (`cyp
 ### Pré-requisitos
 * Node.js instalado (versão 18+)
 
-### 1. Clonar o repositório e instalar dependências
+### 1. Instalar dependências
 ```bash
 npm install
+
+// Instala o Cypress como dependência de desenvolvimento
+npm install cypress --save-dev
+// Cria a interface visual do Cypress pela primeira vez:
+npx cypress open
